@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 8 Task 2{% endblock title %}
+{% block content %}
+<h1>Lab 8 - Task 2</h1>
+<p>Books with edition greater than 3 and title or author containing "qu".</p>
+{% for obj in books %}
+ID: {{ obj.id }}, Title: {{ obj.title }}, Author: {{ obj.author }}, Price: {{ obj.price }}, Edition: {{ obj.edition }}
+<hr>
+{% empty %}
+No books found.
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 8 Task 4{% endblock title %}
+{% block content %}
+<h1>Lab 8 - Task 4</h1>
+<p>Books ordered by title.</p>
+{% for obj in books %}
+ID: {{ obj.id }}, Title: {{ obj.title }}, Author: {{ obj.author }}, Price: {{ obj.price }}, Edition: {{ obj.edition }}
+<hr>
+{% empty %}
+No books found.
+{% endfor %}
+{% endblock content %}

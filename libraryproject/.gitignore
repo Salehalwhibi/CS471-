@@ -21,6 +21,8 @@ env.bak/
 venv.bak/
 .mypy_cache/
 **/migrations
+!apps/bookmodule/migrations/
+!apps/bookmodule/migrations/*.py
 *.DS_Store
 **/__pycache__
 **/.DS_Store
