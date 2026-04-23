@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.db.models import Q
 from .models import Book
 
 def __getBooksList():
@@ -56,15 +55,13 @@ def search_books(request):
 
 
 def simple_query(request):
-    mybooks = Book.objects.filter(
-        Q(title__icontains='and') | Q(author__icontains='and')
-    )
+    mybooks = Book.objects.filter(title__icontains='and')
     return render(request, 'bookmodule/bookList.html', {'books': mybooks})
 
 
 def complex_query(request):
     mybooks = Book.objects.filter(author__isnull=False)\
-        .filter(Q(title__icontains='and') | Q(author__icontains='and'))\
+        .filter(title__icontains='and')\
         .filter(edition__gte=2)\
         .exclude(price__lte=100)[:10]
 
