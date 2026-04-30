@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 9 Task 4{% endblock title %}
+{% block content %}
+<h1>Lab 9 - Task 4</h1>
+<p>Average, min, and max price for each publisher.</p>
+{% for obj in publishers %}
+Publisher: {{ obj.name }}, Avg: {{ obj.avg_price|default:0 }}, Min: {{ obj.min_price|default:0 }}, Max: {{ obj.max_price|default:0 }}
+<hr>
+{% empty %}
+No publishers found.
+{% endfor %}
+{% endblock content %}

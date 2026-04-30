@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 9 Task 6{% endblock title %}
+{% block content %}
+<h1>Lab 9 - Task 6</h1>
+<p>Count of books for each publisher where price > 50 and 1 <= quantity < 5.</p>
+{% for obj in publishers %}
+Publisher: {{ obj.publisher__name }}, Book Count: {{ obj.book_count }}
+<hr>
+{% empty %}
+No matching books found.
+{% endfor %}
+{% endblock content %}

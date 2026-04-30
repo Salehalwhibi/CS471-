@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 9 Task 3{% endblock title %}
+{% block content %}
+<h1>Lab 9 - Task 3</h1>
+<p>Oldest book for each publisher.</p>
+{% for publisher in publishers %}
+Publisher: {{ publisher.name }}
+{% if publisher.oldest_books %}
+{% for book in publisher.oldest_books %}
+Oldest Book: {{ book.title }}, Pubdate: {{ book.pubdate }}
+{% endfor %}
+{% else %}
+No books for this publisher.
+{% endif %}
+<hr>
+{% empty %}
+No publishers found.
+{% endfor %}
+{% endblock content %}

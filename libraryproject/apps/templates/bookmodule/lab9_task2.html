@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Lab 9 Task 2{% endblock title %}
+{% block content %}
+<h1>Lab 9 - Task 2</h1>
+<p>All publishers with total book stock.</p>
+{% for obj in publishers %}
+Publisher: {{ obj.name }}, Total Stock: {{ obj.total_stock|default:0 }}
+<hr>
+{% empty %}
+No publishers found.
+{% endfor %}
+{% endblock content %}
