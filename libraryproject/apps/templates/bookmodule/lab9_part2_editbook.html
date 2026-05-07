@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+{% block title %}Edit Book (Django Form){% endblock %}
+{% block content %}
+<h1>Edit Book (Django Form)</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+</form>
+<a href="{% url 'books.lab9_part2.listbooks' %}">Back to List</a>
+{% endblock %}
